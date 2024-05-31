@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>This is the title of the webpage!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Charts</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      #charts {
+        display: flex;
+        justify-content: space-between;
+      }
+      #barChart {
+        margin-top: 20px;
+      }
+      #pieChart,
+      #pyramidChart {
+        width: 48%;
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <p>
-      This is an example paragraph. Anything in the <strong>body</strong> tag
-      will appear on the page, just like this <strong>p</strong> tag and its
-      contents.
-    </p>
+    <h1>Birth Rate and Population Charts</h1>
+    <div>
+      <label
+        ><input type="radio" name="filter" value="top10" checked /> Top
+        10</label
+      >
+      <label
+        ><input type="radio" name="filter" value="bottom10" /> Bottom 10</label
+      >
+    </div>
+    <div id="barChart"></div>
+    <div id="charts">
+      <div id="pieChart"></div>
+      <div id="pyramidChart"></div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
