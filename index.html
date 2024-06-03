@@ -6,6 +6,33 @@
     <title>Interactive Charts</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <style>
+      #controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      #comboBoxContainer {
+        display: flex;
+        align-items: center;
+      }
+      #comboBox {
+        font-size: 1.2em;
+        padding: 5px;
+      }
+      #radioButtons {
+        display: flex;
+        align-items: center;
+      }
+      #radioButtons label {
+        font-size: 1.2em;
+        margin-left: 10px;
+      }
+      #radioButtons input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
       #charts {
         display: flex;
         justify-content: space-between;
@@ -21,20 +48,41 @@
     </style>
   </head>
   <body>
-    <h1>Birth Rate and Population Charts</h1>
-    <div>
-      <label
-        ><input type="radio" name="filter" value="top10" checked /> Top
-        10</label
-      >
-      <label
-        ><input type="radio" name="filter" value="bottom10" /> Bottom 10</label
-      >
+    <h1>2024 정보시각화 과제</h1>
+    <div id="controls">
+      <div id="comboBoxContainer">
+        <label for="comboBox">지역 선택: </label>
+        <select id="comboBox">
+          <option value="data_sample_1.csv">Option 1 - 서울</option>
+          <option value="data_sample_2.csv">Option 2 - 수원</option>
+          <option value="data_sample_3.csv">Option 3 - 성남</option>
+          <option value="data_sample_4.csv">Option 4 - 용인</option>
+          <option value="data_sample_5.csv">Option 5 - 부산</option>
+        </select>
+      </div>
+      <div id="radioButtons">
+        <span style="font-size: 1.2em; margin-right: 10px"
+          >출산율 상위 or 하위 선택:</span
+        >
+        <label>
+          <input type="radio" name="filter" value="top10" checked /> Top 10
+        </label>
+        <label>
+          <input type="radio" name="filter" value="bottom10" /> Bottom 10
+        </label>
+      </div>
     </div>
+
     <div id="barChart"></div>
     <div id="charts">
-      <div id="pieChart"></div>
-      <div id="pyramidChart"></div>
+      <div class="chart-container">
+        <h2>인구 Pie Chart</h2>
+        <div id="pieChart"></div>
+      </div>
+      <div class="chart-container">
+        <h2>인구 Pyramid Chart</h2>
+        <div id="pyramidChart"></div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
