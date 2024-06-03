@@ -7,7 +7,6 @@ document.getElementById("comboBox").addEventListener("change", function () {
 loadData(document.getElementById("comboBox").value);
 
 // 데이터 로드 및 전처리 함수
-// 데이터 로드 및 전처리 함수
 function loadData(fileName) {
   d3.select("#pieChart").selectAll("*").remove(); // Pie Chart 초기화
   d3.select("#pyramidChart").selectAll("*").remove(); // Pyramid Chart 초기화
